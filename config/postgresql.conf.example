@@ -1,0 +1,12 @@
+# PostgreSQL backup/PITR settings for the lab.
+# Merge these into the active postgresql.conf.
+# Replace YOUR_USER with the OS account that owns ~/backups.
+
+wal_level = replica
+archive_mode = on
+archive_command = 'cp %p /home/YOUR_USER/backups/wal/%f'
+
+# PITR example; set these only during a recovery operation.
+# restore_command = 'cp /home/YOUR_USER/backups/wal/%f %p'
+# recovery_target_time = '2026-10-07 08:30:00+01'
+# recovery_target_action = 'pause'
