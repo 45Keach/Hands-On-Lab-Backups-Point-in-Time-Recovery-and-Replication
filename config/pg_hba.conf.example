@@ -1,0 +1,6 @@
+# Same-host streaming replication example.
+# Prefer SCRAM on supported PostgreSQL versions.
+host replication replicator 127.0.0.1/32 scram-sha-256
+
+# If the lab environment specifically uses MD5 authentication:
+# host replication replicator 127.0.0.1/32 md5
